@@ -5,7 +5,7 @@ class AgentController {
         this.world0 = null;
         this.world = null;
         this.actions = [];
-        this.data = { states: {}, world: {} }
+        this.data = { states: {}, world: {}, stateF : {}}
     }
     /**
      * Setup the configuration for the agent controller
@@ -21,7 +21,7 @@ class AgentController {
      * @param {Agent} agent 
      * @param {Object} state0 
      */
-    register(agent, state0) {
+    register(agent, state0, stateF) {
         if (this.agents[agent.getID()]) {
             throw 'AgentIDAlreadyExists';
         } else {
@@ -29,6 +29,7 @@ class AgentController {
             this.data.states[agent.getID()] = state0;
             //TODO conver state0 to an inmutable object
             agent.setup(state0);
+            this.data.stateF = stateF;
         }
     }
     /**

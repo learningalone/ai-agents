@@ -41,9 +41,9 @@ class Problem {
      * @param {*} agentClass 
      * @param {*} initialState 
      */
-    addAgent(agentID, agentClass, initialState) {
+    addAgent(agentID, agentClass, initialState, finalState) {
         let agent = new agentClass(agentID);
-        this.controller.register(agent, initialState);
+        this.controller.register(agent, initialState, finalState);
     }
     
     /**

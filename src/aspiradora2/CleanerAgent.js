@@ -8,6 +8,7 @@ class CleanerAgent extends Agent {
     constructor(value) {
         super(value);
 
+
         this.costs = {
             "R": 1,
             "L": 1,
